@@ -1,78 +1,94 @@
 import Image from "next/image"
-import { Box, Heading, Flex, Text, Button, Input } from "theme-ui";
+import { Box,Container, Heading, Flex, Text, Button, Input } from "theme-ui";
 import style from './style.module.css'
 
 const About = () => {
   return (
-    <Box sx={{
-      background: 'white'
-    }}>
+    <Container>
+
       <Flex sx={{
         flexDirection: ['column', null, null, 'row'],
         width:'100%',
-        mx: '100px',
-        gap: '100px'
-        
+        mx:'auto'
       }}>
         <Box sx={{
-          width: '50%',
+          width: '45%',
           p:{
-            my:'50px'
+            my:'20px'
           }
 
         }}>
           <Heading sx={{
-            fontSize: '80px',
-            lineHeight: '88px',
-            marginTop: '169px',
-            fontWeight: '800'
-          }} className={style.title}>Hire pros from your home</Heading>
+           marginTop: '85px',
+           pt: '60px',
+           marginBottom: '20px',
+           maxWidth: '400px'
+          }} >Hire pros from your home</Heading>
           <Text as='p' sx={{
-            marginBottom: '100px',
-            color: '#252627',
-            fontSize: '28px',
-            fontWeight: '400px',
-            lineHeight: '39.2px',
-            
+            maxWidth: '517px',
           }}>Access top-tier professionals remotely, revolutionizing the way you hire and collaborate, all from the comfort of your home.</Text>
           
-          <Box sx={{
-            gap:'25px',
-            my: '30px',
+          <Flex sx={{
             display: 'flex',
-            Input: {
-              display: 'flex',
-              width: '406px',
-              color: '#5E80ED',
-              background: '#D1DBFA',
-              px: '50px',
-              borderRadius: '10px',
-              border: 'none',
-              
-            }
+            gap: '13px',
+            
           }}>
-            <Input className={style.Input} name="phone number" placeholder="Enter your phone number"/>
+            <Box sx={{
+              gap: '13px',
+              my: '15px',
+              width:'fit-content',
+              display: 'flex',
+              fontSize: '12px',
+              position: 'relative',
+              input: {
+                width: '270px',
+                color: '#5E80ED',
+                background: '#D1DBFA',
+                pl:'35px',
+                py: '15px',
+                borderRadius: '5px',
+                '::placeholder':{
+                  color:'#5E80ED',
+                  fontWeight: '600'
+                }
+              },
+              img:{
+                position:'absolute',
+                my:'auto',
+                top:0,
+                bottom:0,
+                ml:'5px',
+                opacity: '1'
+              }
+            }}>
+              <Input id="phone number" name="phone number" placeholder="Enter your phone number" />
               <Image src="/assets/phone.svg" alt="img" width={22.67} height={22.67} />
-              <Button sx={{
+            </Box>
+            <Button sx={{
               gap: '10px',
               display: 'flex',
+              my:'auto',
               borderRadius: '7px',
               background: '#1741CC',
               color: 'white',
-              height:'fit-content',
-              p:'20px 25px'
+              height: 'fit-content',
+              py: '15px',
+              fontSize: '12px',
+              fontWeight: '600'
             }}>
               Join the waiting list
             </Button>
-          </Box>
+          </Flex>
         </Box>
         <Box sx={{
-          width: '1200px'
+          width: '55%',
+          display:'flex',
+          justifyContent:'end'
         }}>
-          <Image className={style.hero} src={'/assets/Hero2.png'} alt="img" width={732} height={942} />
+          <Image className={style.hero} src={'/assets/Hero2.png'} alt="img" width={600} height={700} />
         </Box>
       </Flex>
-    </Box>
+    </Container>
 
   );
 }

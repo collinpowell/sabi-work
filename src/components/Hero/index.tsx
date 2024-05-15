@@ -1,75 +1,104 @@
 import Image from "next/image"
-import { Box, Heading, Flex, Text, Button, Input } from "theme-ui";
+import { Box, Heading, Container, Flex, Text, Button, Input } from "theme-ui";
 import style from './style.module.css'
 
 const Hero = () => {
   return (
     <Box sx={{
-      background: 'blue',
+      background: '#1741CC',
     }}>
-      <Flex sx={{
-        flexDirection: ['column', null, null, 'row'],
-        width:'100%',
-        mx: '100px'
-      }}>
-        <Box sx={{
-          width: '50%',
-          p:{
-            my:'60px'
-          }
-
+      <Container>
+        <Flex sx={{
+          flexDirection: ['column', null, null, 'row'],
+          width: '100%',
         }}>
-          <Heading sx={{
-            fontSize: '80px',
-            lineHeight: '88px',
-            marginTop: '169px',
-            fontWeight: 'bold',
-            color: 'white'
-          }}>Find & Hire the best skilled professionals
-          </Heading>
-          <Text as='p' sx={{
-            marginBottom: '100px',
-            color: 'white',
-            fontSize: '28px',
-            fontWeight: '400px',
-            lineHeight: '39.2px',
-            
-          }}>Revolutionizing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
-          </Text>
-          <Image src={'/assets/Faces.png'} alt="img" width={176} height={40}/>
           <Box sx={{
-            gap:'25px',
-            my: '30px',
-            display: 'flex',
-            Input: {
-              display: 'flex',
-              width: '406px',
-              color: '#5E80ED',
-              background: '#D1DBFA',
-              px: '50px',
-              borderRadius: '10px'
+            width: ['100%',null,null,'55%'],
+            textAlign: ['center',null,null,'left'],
+            p: {
+              my: '30px'
+            },
+            '.faces': {
+              my: '15px'
             }
+
           }}>
-            <Input id="phone number" name="phone number" placeholder="Enter your phone number"/>
-              <Image src="/assets/phone.svg" alt="img" width={22.67} height={22.67} />
-              <Button sx={{
-              gap: '10px',
+            <Heading sx={{
+              marginTop: '85px',
+              color: 'white',
+              pt: '40px',
+              marginBottom: '30px'
+            }}>Find & hire the best skilled professionals
+            </Heading>
+            <Text as='p' sx={{
+              maxWidth: '517px',
+              color:'white'
+            }}>Changing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
+            </Text>
+            <Image className="faces" src={'/assets/Faces.png'} alt="img" width={120} height={50} />
+            <Flex sx={{
               display: 'flex',
-              borderRadius: '7px',
-              background: 'white',
-              color: '#1741CC',
-              height:'fit-content',
-              p:'20px 25px'
+              gap: '13px',
+
             }}>
-              Join the waiting list
-            </Button>
+              <Box sx={{
+                gap: '13px',
+                my: '15px',
+                width: 'fit-content',
+                display: 'flex',
+                fontSize: '12px',
+                position: 'relative',
+                input: {
+                  width: '270px',
+                  color: '#5E80ED',
+                  background: '#D1DBFA',
+                  pl: '35px',
+                  py: '15px',
+                  borderRadius: '5px',
+                  '::placeholder': {
+                    color: '#5E80ED',
+                    fontWeight: '600'
+                  }
+                },
+                img: {
+                  position: 'absolute',
+                  my: 'auto',
+                  top: 0,
+                  bottom: 0,
+                  ml: '5px',
+                  opacity: '1'
+                }
+              }}>
+                <Input id="phone number" name="phone number" placeholder="Enter your phone number" />
+                <Image src="/assets/phone.svg" alt="img" width={22} height={22} />
+              </Box>
+              <Button sx={{
+                gap: '10px',
+                display: 'flex',
+                my: 'auto',
+                borderRadius: '7px',
+                background: 'white',
+                color: '#1741CC',
+                height: 'fit-content',
+                py: '15px',
+                fontSize: '12px',
+                fontWeight: '600'
+              }}>
+                Join the waiting list
+              </Button>
+            </Flex>
+
           </Box>
-        </Box>
-        <Box>
-          <Image className={style.hero} src={'/assets/hero.png'} alt="img" width={732} height={942} />
-        </Box>
-      </Flex>
+          <Box sx={{
+            mt: '-30px'
+          }}>
+            <Image className={style.hero} src={'/assets/hero.png'} alt="img" width={500} height={900} />
+          </Box>
+        </Flex>
+      </Container>
+
     </Box>
+
 
   );
 }

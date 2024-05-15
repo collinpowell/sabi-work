@@ -12,5 +12,12 @@
     font-family: TTFBold;
     src: url(../tt_fors/TT\ Fors\ Trial\ Bold.ttf);
     }
+
+    @font-face{
+      font-family: TTFBoldExtra;
+      src: url(../tt_fors/TT\ Fors\ Trial\ ExtraBold.ttf);
+      }
   
-  
+  body{
+    overflow-x: hidden;
+  }

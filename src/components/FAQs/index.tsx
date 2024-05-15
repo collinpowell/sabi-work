@@ -55,8 +55,6 @@ const FAQ = () => {
       }} id="faq">
           <Heading className={style.title} >FAQs</Heading>
           <Box sx={{
-              width: '1680px',
-              mx: '100px',
               textAlign: 'center',
               background: '#03091C',
               color: 'white',
@@ -68,15 +66,14 @@ const FAQ = () => {
           }}>
               <Box sx={{
                   textAlign: 'left',
-                  fontSize: '28px'
               }}>
                   {faq.map(({ question, answer }, i) => {
                       return (
                           
                           
                           <Box key={i} sx={{
-                              h3: {
-                                  my: '32px',
+                              h4: {
+                                  my: 'auto',
                               },
                               '.block': {
                                   display: 'block',
@@ -109,9 +106,11 @@ const FAQ = () => {
                                   display: 'flex'
                                 }}>
                                   <QuestionMark/>
-                                  <Text as='h3'>{question}</Text>
+                                  <Text as='h4'>{question}</Text>
                                 </Box>
-                                <Box >
+                                <Box  sx={{
+                                  my: 'auto'
+                                }}>
                                     <ArrowRight />
                                 </Box>
                             </Flex>
@@ -128,4 +127,4 @@ const FAQ = () => {
     )
 }
 
-export default FAQ;
+export default FAQ;
