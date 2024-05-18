@@ -3,7 +3,9 @@ import { Box, Heading, Container } from "theme-ui";
 
 const Items = () => {
   return (
-    <Box>
+    <Box sx={{
+      display: ['none', null, null, 'contents']
+    }}>
       <Container>
         <Heading sx={{
           marginTop: '169px',

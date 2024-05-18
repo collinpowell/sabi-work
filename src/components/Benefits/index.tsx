@@ -23,7 +23,8 @@ const Benefits = () => {
           <Text as='p' sx={{
             marginBottom: '100px',
             color: '#252627',
-            width: '50%',
+            width: ['100%', null, null, '50%'],
+            textAlign: ['left', null, null, 'left']
             
           }}><b>Empowering trust and confidence</b>, our unwavering dedication to safety and transparency ensures peace of mind with every hire you make, fostering strong and secure professional relationships.
           </Text>
@@ -34,7 +35,8 @@ const Benefits = () => {
             flexDirection: ['column', null, null, 'row'],
             img:{
               width: ['100%', null, null, '50%'],
-            }
+            },
+            
           }}>
             <Image src={'/assets/Man.png'} alt="img" width={972} height={857}/>
             <Image src={'/assets/Escrow.png'} alt="img" width={676} height={857} />

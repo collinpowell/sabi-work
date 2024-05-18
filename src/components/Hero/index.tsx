@@ -19,7 +19,8 @@ const Hero = () => {
               my: '30px'
             },
             '.faces': {
-              my: '15px'
+              my: '15px', 
+              justifyContent: ['center', null, null, 'left']
             }
 
           }}>
@@ -58,7 +59,8 @@ const Hero = () => {
                   '::placeholder': {
                     color: '#5E80ED',
                     fontWeight: '600'
-                  }
+                  },
+                  display: ['none', null, null, 'flex']
                 },
                 img: {
                   position: 'absolute',
@@ -74,7 +76,7 @@ const Hero = () => {
               </Box>
               <Button sx={{
                 gap: '10px',
-                display: 'flex',
+                display: ['flex'],
                 my: 'auto',
                 borderRadius: '7px',
                 background: 'white',
@@ -82,7 +84,8 @@ const Hero = () => {
                 height: 'fit-content',
                 py: '15px',
                 fontSize: '12px',
-                fontWeight: '600'
+                fontWeight: '600',
+                
               }}>
                 Join the waiting list
               </Button>

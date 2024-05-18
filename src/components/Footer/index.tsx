@@ -9,13 +9,16 @@ const Footer = () => {
     }}>
       <Divider />
       <Flex sx={{
-        flexDirection: ['column',null,null,'row'],
-        display: 'flex',
-        justifyContent: 'space-evenly',
+        flexDirection: ['column',null,null,'row'], 
+        display: ['grid', null, null, 'flex'],
+        justifyContent: ['left', null, null, 'space-evenly'],
         marginTop: '50px',
-        marginBottom: '70px'
+        marginBottom: '70px',
+        gap: ['40px', null, null, 'null']
       }}>
-        <Box>
+        <Box sx={{
+          
+        }}>
           <Image src="/assets/Logo.svg" alt="img" width={200} height={100} />
         </Box>
         <Box sx={{
