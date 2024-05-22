@@ -95,7 +95,7 @@ const Hero = () => {
           <Box sx={{
             mt: '-30px'
           }}>
-            <Image className={style.hero} src={'/assets/hero.png'} alt="img" width={500} height={900} />
+            <Image className={style.hero} src={'/assets/Hero.png'} alt="img" width={500} height={900} />
           </Box>
         </Flex>
       </Container>

@@ -5,15 +5,19 @@ import { Box, Flex, Button, Container } from "theme-ui";
 const Header = () => {
   return (
     <Box sx={{
-      background: 'white',
+      background: ['rgba(255, 255, 255, 0.6)',null,null,'white'],
+      backdropFilter:['blur(10px)'],
       width: '100%',
       height: '80px',
-      display: ['none',null,null,'flex'],
-
+      display: ['flex',null,null,'flex'],
+      position: ['fixed',null,null,'sticky'],
+      top:['initial',null,null,0],
+      bottom:[0,null,null,'initial'],
+      zIndex:200,
     }}>
       <Container sx={{ my: 'auto' }}>
         <Flex sx={{
-          flexDirection: ['column', null, null, 'row'],
+          flexDirection: ['row', null, null, 'row'],
           justifyContent: 'space-between',
           width: '100%',
         }}>
@@ -27,12 +31,8 @@ const Header = () => {
               width: 'fit-content',
               height: 'fit-content',
               padding: '10px 16px',
-
-
             }
-
           }}>
-
             <Button sx={{
               background: '#1741CC',
               color: 'white',
@@ -46,9 +46,6 @@ const Header = () => {
               Join the waiting list
               <Image src="/assets/App google.svg" alt="img" width={30} height={12} />
             </Button>
-
-
-
           </Box>
 
         </Flex>

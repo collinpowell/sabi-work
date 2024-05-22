@@ -58,7 +58,7 @@ const FAQ = () => {
               textAlign: 'center',
               background: '#03091C',
               color: 'white',
-              padding: '100px',
+              padding: ['50px',null,null,'100px'],
               borderRadius: '50px',
               h2: {
                   mb: '64px'
