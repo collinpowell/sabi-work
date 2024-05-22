@@ -5,7 +5,6 @@ const Footer = () => {
   return (
     <Container sx={{
       width: '100%',
-      height: '464px'
     }}>
       <Divider />
       <Flex sx={{

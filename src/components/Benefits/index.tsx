@@ -35,6 +35,8 @@ const Benefits = () => {
             flexDirection: ['column', null, null, 'row'],
             img:{
               width: ['100%', null, null, '50%'],
+              objectFit:'cover',
+              borderRadius:'50px'
             },
             
           }}>
