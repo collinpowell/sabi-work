@@ -18,6 +18,7 @@ const customStyles = {
         border: "none",
         borderRadius: "24px",
         maxWidth: "480px",
+        width: "-webkit-fill-available",
         padding: "0",
         backgroundColor: "#E2F4FE",
     },
@@ -45,7 +46,9 @@ const WaitlistModal = ({ header, modalIsOpen, setIsOpen }: any) => {
             closeTimeoutMS={500}
             contentLabel="Example Modal"
         >
-            <Box>
+            <Box sx={{
+                width:'100%'
+            }}>
                 <Box sx={{
                     position: "relative",
                     textAlign: "center",
