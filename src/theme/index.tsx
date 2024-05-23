@@ -31,7 +31,7 @@ export const theme: Theme = {
   },
   layout: {
     container: {
-      maxWidth: ['90%', null, '1000px', '1150px']
+      maxWidth: ['90%', null,null, '1000px', '1150px']
     }
   }
 }

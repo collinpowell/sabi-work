@@ -1,12 +1,25 @@
 import Image from "next/image"
 import { Box, Heading, Container, Flex, Text, Button, Input } from "theme-ui";
 import style from './style.module.css'
+import { useState } from "react";
+import WaitlistModal from "../Modal";
 
 const Hero = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalHeader, setModalHeader] = useState("");
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <Box sx={{
       background: '#1741CC',
     }}>
+      <WaitlistModal
+        header={modalHeader}
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+      />
       <Container>
         <Flex sx={{
           flexDirection: ['column', null, null, 'row'],
@@ -20,6 +33,7 @@ const Hero = () => {
             },
             '.faces': {
               my: '15px', 
+              mx:['auto',null,null,'initial'],
               justifyContent: ['center', null, null, 'left']
             }
 
@@ -33,7 +47,8 @@ const Hero = () => {
             </Heading>
             <Text as='p' sx={{
               maxWidth: '517px',
-              color:'white'
+              color:'white',
+              mx:['auto',null,null,'initial'],
             }}>Changing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
             </Text>
             <Image className="faces" src={'/assets/Faces.png'} alt="img" width={120} height={50} />
@@ -77,7 +92,8 @@ const Hero = () => {
               <Button sx={{
                 gap: '10px',
                 display: ['flex'],
-                my: 'auto',
+                my:'auto',
+                mx:['auto',null,null,'initial'],
                 borderRadius: '7px',
                 background: 'white',
                 color: '#1741CC',
@@ -86,6 +102,9 @@ const Hero = () => {
                 fontSize: '12px',
                 fontWeight: '600',
                 
+              }}  onClick={() => {
+                setModalHeader("Join the waitlist");
+                openModal();
               }}>
                 Join the waiting list
               </Button>
