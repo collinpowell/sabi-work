@@ -64,7 +64,7 @@ const WaitlistModal = ({ header, modalIsOpen, setIsOpen }: any) => {
                     <Heading sx={{ textAlign: "left" }}>
                         Join the Waiting List
                     </Heading>
-                    <Text as='p' sx={{ fontSize: ['13px',null,null,'16px'],maxWidth:'98%' }}>Be among the first to access our app, we're driven to empower your skills and business, fueling unparalleled growth and success.</Text>
+                    <Text as='p' sx={{ fontSize: ['13px',null,null,'16px'],maxWidth:'98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
 
                     <svg style={{
                         position: "absolute",
