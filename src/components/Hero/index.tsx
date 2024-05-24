@@ -1,39 +1,27 @@
 import Image from "next/image"
-import { Box, Heading, Container, Flex, Text, Button, Input } from "theme-ui";
+import { Box, Heading, Container, Flex, Text } from "theme-ui";
 import style from './style.module.css'
-import { useState } from "react";
-import WaitlistModal from "../Modal";
-
+import JoinWaitlist from "../JoinWaitlist";
 const Hero = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalHeader, setModalHeader] = useState("");
-
-  function openModal() {
-    setIsOpen(true);
-  }
   return (
     <Box sx={{
       background: '#1741CC',
     }}>
-      <WaitlistModal
-        header={modalHeader}
-        modalIsOpen={modalIsOpen}
-        setIsOpen={setIsOpen}
-      />
+
       <Container>
         <Flex sx={{
           flexDirection: ['column', null, null, 'row'],
           width: '100%',
         }}>
           <Box sx={{
-            width: ['100%',null,null,'55%'],
-            textAlign: ['center',null,null,'left'],
+            width: ['100%', null, null, '55%'],
+            textAlign: ['center', null, null, 'left'],
             p: {
               my: '30px'
             },
             '.faces': {
-              my: '15px', 
-              mx:['auto',null,null,'initial'],
+              my: '15px',
+              mx: ['auto', null, null, 'initial'],
               justifyContent: ['center', null, null, 'left']
             }
 
@@ -46,76 +34,17 @@ const Hero = () => {
             }}>Find & hire the best skilled professionals
             </Heading>
             <Text as='p' sx={{
-              maxWidth: '517px',
-              color:'white',
-              mx:['auto',null,null,'initial'],
+              maxWidth: '580px',
+              color: 'white',
+              mx: ['auto', null, null, 'initial'],
+              opacity: '0.8'
             }}>Changing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
             </Text>
-            <Image className="faces" src={'/assets/Faces.png'} alt="img" width={120} height={50} />
-            <Flex sx={{
-              display: 'flex',
-              gap: '13px',
-
-            }}>
-              <Box sx={{
-                gap: '13px',
-                my: '15px',
-                width: 'fit-content',
-                display: 'flex',
-                fontSize: '12px',
-                position: 'relative',
-                input: {
-                  width: '270px',
-                  color: '#5E80ED',
-                  background: '#D1DBFA',
-                  pl: '35px',
-                  py: '15px',
-                  borderRadius: '5px',
-                  '::placeholder': {
-                    color: '#5E80ED',
-                    fontWeight: '600'
-                  },
-                  display: ['none', null, null, 'flex']
-                },
-                img: {
-                  position: 'absolute',
-                  my: 'auto',
-                  top: 0,
-                  bottom: 0,
-                  ml: '5px',
-                  opacity: '1'
-                }
-              }}>
-                <Input id="phone number" name="phone number" placeholder="Enter your phone number" />
-                <Image src="/assets/phone.svg" alt="img" width={22} height={22} />
-              </Box>
-              <Button sx={{
-                gap: '10px',
-                display: ['flex'],
-                my:'auto',
-                mx:['auto',null,null,'initial'],
-                borderRadius: '7px',
-                background: 'white',
-                color: '#1741CC',
-                height: 'fit-content',
-                py: '15px',
-                fontSize: '12px',
-                fontWeight: '600',
-                
-              }}  onClick={() => {
-                setModalHeader("Join the waitlist");
-                openModal();
-              }}>
-                Join the waiting list
-              </Button>
-            </Flex>
-
+            <Image className="faces" src={'/assets/Faces.svg'} alt="img" width={120} height={50} />
+            <JoinWaitlist />
           </Box>
-          <Box sx={{
-            mt: '-30px'
-          }}>
-            <Image className={style.hero} src={'/assets/Hero.png'} alt="img" width={500} height={900} />
-          </Box>
+
+          <Image className={style.hero} src={'/assets/Hero.png'} alt="img" width={500} height={900} />
         </Flex>
       </Container>
 

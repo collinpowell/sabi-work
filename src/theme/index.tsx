@@ -13,7 +13,7 @@ export const theme: Theme = {
   },
   text: {
     heading: {
-      fontSize: ['45px', null, null, '50px'],
+      fontSize: ['45px', null, null, '58px'],
       lineHeight: '55px',
       letterSpacing: '-0.5px',
       fontWeight: '800',
@@ -22,16 +22,19 @@ export const theme: Theme = {
   },
   styles: {
     root: {
-
       p: {
-        fontSize: ['15px', null, null, '18px'],
+        fontSize: ['15px', null, null, '20px'],
         color: '#252627',
+        letterSpacing:'-0.5px',
+              opacity:'0.8',
+              lineHeight:'140%',
+        fontWeight:'400'
       }
     }
   },
   layout: {
     container: {
-      maxWidth: ['90%', null,null, '1150px', '1150px']
+      maxWidth: ['90%', null,null, '1200px', '1200px']
     }
   }
 }
