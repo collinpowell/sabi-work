@@ -21,7 +21,7 @@ const Header = () => {
           justifyContent: 'space-between',
           width: '100%',
         }}>
-          <Image src={'/assets/Logo.svg'} alt="img" width={87} height={32} />
+          <Image src={'/assets/Logo.svg'} alt="img" width={120} height={50} />
           <Box sx={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -30,16 +30,14 @@ const Header = () => {
             button: {
               width: 'fit-content',
               height: 'fit-content',
-              padding: '10px 16px',
+              padding: '15px 20px',
             }
           }}>
             <ButtonM sx={{
               background: '#1741CC',
               color: 'white',
               display: 'flex',
-              gap: '10px',
               borderRadius: '30px',
-
               border: '1px solid black',
               p: {
                 my: 'auto',
@@ -49,13 +47,14 @@ const Header = () => {
               },
               img: {
                 my: 'auto',
+                ml:'5px',
                 display:['none',null,null,'block']
               }
             }}
               modal={true}>
               <Text as='p'>Join the waiting list</Text>
 
-              <Image src="/assets/App google.svg" alt="img" width={30} height={12} />
+              <Image src="/assets/App google.svg" alt="img" width={40} height={15} />
             </ButtonM>
           </Box>
 
