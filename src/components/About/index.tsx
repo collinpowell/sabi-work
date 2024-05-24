@@ -33,15 +33,29 @@ const About = () => {
             maxWidth: '517px',
             textAlign: ['left', null, null, 'left']
           }}>Access top-tier professionals remotely, revolutionizing the way you hire and collaborate, all from the comfort of your home.</Text>
-
-          <JoinWaitlist blue={true} />
+          <Box sx={{
+            width: 'fit-content',
+            mr: 'auto'
+          }}>
+            <JoinWaitlist blue={true} />
+          </Box>
         </Box>
         <Box sx={{
           width: ['100%', null, null, '55%'],
           display: 'flex',
-          justifyContent: 'end'
+          justifyContent: 'end',
+          img:{
+            ':nth-of-type(1)': {
+              display: ['none', null, null, 'block']
+            },
+            ':nth-of-type(2)': {
+              display: ['block', null, null, 'none']
+            }
+          }
+        
         }}>
           <Image className={style.hero} src={'/assets/Hero2.png'} alt="img" width={600} height={700} />
+          <Image className={style.hero} src={'/assets/mobile-yello.png'} alt="img" width={600} height={700} />
         </Box>
       </Flex>
     </Container>

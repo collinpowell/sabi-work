@@ -48,7 +48,8 @@ const Header = () => {
                 fontWeight: '600',
               },
               img: {
-                my: 'auto'
+                my: 'auto',
+                display:['none',null,null,'block']
               }
             }}
               modal={true}>

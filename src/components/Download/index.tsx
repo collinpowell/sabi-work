@@ -8,7 +8,7 @@ const Download = () => {
     <Container sx={{
       background: 'url(/assets/download-bg.svg) no-repeat',
       backgroundSize: 'cover',
-      borderRadius: '50px'
+      borderRadius: '50px',
     }}>
       <Flex sx={{
         flexDirection: ['column', null, null, 'row'],

@@ -34,24 +34,24 @@ const faq = [
         answer: 'We vet all service providers before they are listed on Sabiwork. Additionally, each provider has a profile with customer reviews and ratings to help you make an informed decision.'
     },
     {
-        question:'How can service providers make money on Sabiwork?',
-        answer:'Service providers can make money from Sabiwork by being hired to do a job, every transaction you make would be between you and the client.',
+        question: 'How can service providers make money on Sabiwork?',
+        answer: 'Service providers can make money from Sabiwork by being hired to do a job, every transaction you make would be between you and the client.',
     },
     {
-        question:'Can I communicate with the service provider before booking?',
-        answer:'Yes, you can use the in-app messaging feature to communicate with service providers before making a booking to discuss your needs, negotiate, and ask any questions.',
+        question: 'Can I communicate with the service provider before booking?',
+        answer: 'Yes, you can use the in-app messaging feature to communicate with service providers before making a booking to discuss your needs, negotiate, and ask any questions.',
     },
     {
-        question:'How do I contact Sabiwork Customer Support?',
-        answer:'You can reach our customer support team via support@sabiwork.app, you can also reach us through the app or via our social media pages. We are here to help with any questions or issues you may have.',
+        question: 'How do I contact Sabiwork Customer Support?',
+        answer: 'You can reach our customer support team via support@sabiwork.app, you can also reach us through the app or via our social media pages. We are here to help with any questions or issues you may have.',
     },
     {
-        question:'Can I hire or make transactions outside of sabiwork?',
-        answer:'To ensure a smooth experience between clients and service providers, we strongly recommend using the app for all hiring and transactions. Any arrangement or payments made outside of Sabiwork are at the clients own risk, and Sabiwork will not be responsible for any associated costs.',
+        question: 'Can I hire or make transactions outside of sabiwork?',
+        answer: 'To ensure a smooth experience between clients and service providers, we strongly recommend using the app for all hiring and transactions. Any arrangement or payments made outside of Sabiwork are at the clients own risk, and Sabiwork will not be responsible for any associated costs.',
     },
     {
-        question:'Is Sabiwork nationwide?',
-        answer:'No, Sabiwork only operates in 3 states for now which are Lagos State, Rivers State, and Abuja. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
+        question: 'Is Sabiwork nationwide?',
+        answer: 'No, Sabiwork only operates in 3 states for now which are Lagos State, Rivers State, and Abuja. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
     }
 
 
@@ -67,7 +67,7 @@ const FAQ = () => {
                 textAlign: 'center',
                 background: '#03091C',
                 color: 'white',
-                padding: ['50px', null, null, '100px'],
+                padding: ['25px', null, null, '100px'],
                 borderRadius: '50px',
                 h2: {
                     mb: '64px'
@@ -81,8 +81,9 @@ const FAQ = () => {
 
 
                             <Box key={i} sx={{
-                                h4: {
+                                '.hi': {
                                     my: 'auto',
+                                    color: 'white'
                                 },
                                 '.block': {
                                     display: 'block',
@@ -109,21 +110,29 @@ const FAQ = () => {
                                 })
                             }}>
                                 <Flex sx={{
-                                    justifyContent: 'space-between'
+                                    width: '100%',
+                                    height:'fit-content'
                                 }}>
                                     <Box sx={{
-                                        display: 'flex'
+                                        width: '40px'
+
                                     }}>
                                         <QuestionMark />
-                                        <Text as='h4'>{question}</Text>
                                     </Box>
+                                    <Box sx={{my:'auto',ml:['15px',null,null,'20px'],width:'100%'}}>
+                                        <Text as='p' className="hi"><b>{question}</b></Text>
+
+                                    </Box>
+
                                     <Box sx={{
-                                        my: 'auto'
+                                        my: 'auto',
+                                        ml: 'auto',
+                                        width: '20px'
                                     }}>
                                         <ArrowRight />
                                     </Box>
                                 </Flex>
-                                <Text as='p' variant="normal" sx={{color:'white'}} className={drop && drop.i == i && drop.drop ? 'block' : 'none'}>{answer}</Text>
+                                <Text as='p' variant="normal" sx={{ color: 'white' }} className={drop && drop.i == i && drop.drop ? 'block' : 'none'}>{answer}</Text>
                                 <hr />
                             </Box>
                         )

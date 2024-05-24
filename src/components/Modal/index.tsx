@@ -6,6 +6,8 @@ const APIURL = ''
 import { toast } from "react-toastify";
 import { useState } from "react";
 import axios from "axios";
+/* Rectangle 377 */
+
 
 const customStyles = {
     content: {
@@ -16,11 +18,13 @@ const customStyles = {
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
         border: "none",
-        borderRadius: "24px",
-        maxWidth: "480px",
+        borderRadius: "20px",
+        boxShadow:'inset 0px -12px 0px #1741CC',
+        maxWidth: "550px",
         width: "-webkit-fill-available",
         padding: "0",
-        backgroundColor: "#E2F4FE",
+        paddingBottom: "30px",
+        background: "linear-gradient(180deg, #EDF1FD 43.88%, #FFFFFF 70.04%)",
     },
     overlay: {
         backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -44,64 +48,54 @@ const WaitlistModal = ({ header, modalIsOpen, setIsOpen }: any) => {
             onRequestClose={closeModal}
             style={customStyles as any}
             closeTimeoutMS={500}
-            contentLabel="Example Modal"
+            contentLabel="Modal"
         >
             <Box sx={{
-                width:'100%'
+                width: '100%',
             }}>
                 <Box sx={{
                     position: "relative",
-                    textAlign: "center",
-                    h1: {
-                        fontSize: ["18px", null, null, "20px"],
-                        wordWrap: "break-word",
-                        position: "relative",
-                        maxWidth: "411px",
-                        mr: "auto",
-                        ml: "auto",
-                        mb: "20px",
-                        mt: "20px",
-                        whiteSpace: "initial",
-                    },
+                    textAlign: "left",
+                    padding: ['15px'],
+                    h2: {
+                        fontSize: ['20px',null,null,'32px']
+                    }
                 }}>
-                    <Heading as="h1" sx={{ textAlign: "center" }}>
-                        {header}
+                    <Heading sx={{ textAlign: "left" }}>
+                        Join the Waiting List
                     </Heading>
-                    <svg
-                        style={{
-                            position: "absolute",
-                            right: "0",
-                            top: "0",
-                            marginRight: "25px",
-                        }}
-                        onClick={closeModal}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                    >
-                        <path
-                            d="M18 6L6 18"
-                            stroke="#012032"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M6 6L18 18"
-                            stroke="#012032"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
+                    <Text as='p' sx={{ fontSize: ['13px',null,null,'16px'],maxWidth:'98%' }}>Be among the first to access our app, we're driven to empower your skills and business, fueling unparalleled growth and success.</Text>
+
+                    <svg style={{
+                        position: "absolute",
+                        right: "0",
+                        top: "20px",
+                        marginRight: "25px",
+                    }} onClick={closeModal} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.9999 14.9999L19.9999 19.9999M19.9999 19.9999L14.9999 24.9999M19.9999 19.9999L24.9999 24.9999M19.9999 19.9999L14.9999 14.9999M36.6666 19.9999C36.6666 29.2047 29.2047 36.6666 19.9999 36.6666C10.7952 36.6666 3.33325 29.2047 3.33325 19.9999C3.33325 10.7952 10.7952 3.33325 19.9999 3.33325C29.2047 3.33325 36.6666 10.7952 36.6666 19.9999Z" stroke="#1741CC" stroke-width="3" stroke-linecap="round" />
                     </svg>
+
                 </Box>
                 <RequestService />
             </Box>
         </Modal>
     );
 };
+
+/**
+ * 
+
+position: absolute;
+width: 740px;
+height: 976px;
+left: calc(50% - 740px/2 - 21px);
+top: calc(50% - 976px/2 - 10px);
+
+background: #FFFFFF;
+box-shadow: inset 0px -12px 0px #1741CC;
+border-radius: 20px;
+
+ */
 
 export default WaitlistModal;
 
@@ -166,30 +160,45 @@ const RequestService = () => {
     return (
         <Box as="form" sx={styles.form}>
             <Grid width={[250, null, 400]} gap={2} columns={[2, "1fr 2fr"]}>
-                <Box>
-                    <Label htmlFor="fullName">Full Name</Label>
+                <Box >
+                    <Label htmlFor="fullName">Full Name <span>*</span></Label>
                     <Input
                         name="fullName"
                         id="fullName"
                         onChange={(e) => setName(e.target.value)}
                         mb={3}
                         value={name}
-                        placeholder="Google"
+                        placeholder="Type your name here..."
                     />
                 </Box>
                 <Box>
-                    <Label htmlFor="company">Company</Label>
+                    <Label htmlFor="phone">Phone Number <span>*</span></Label>
+                    <Input
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                        type="number"
+                        name="phone"
+                        id="phone"
+                        value={mobileNumber}
+                        mb={3}
+                        placeholder="070 0000 0000"
+                    />
+                </Box>
+                <Box>
+                    <Label htmlFor="company">Service you offer <span>*</span></Label>
                     <Input
                         name="company"
                         id="company"
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         mb={3}
-                        placeholder="Google"
+                        placeholder="e.g. Painter, carpenter, electrician, cleaner..."
                     />
                 </Box>
+                
+             
+
                 <Box>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Email (optional)</Label>
                     <Input
                         type="email"
                         name="email"
@@ -200,22 +209,13 @@ const RequestService = () => {
                         placeholder="example@google.com"
                     />
                 </Box>
-                <Box>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                        onChange={(e) => setMobileNumber(e.target.value)}
-                        type="number"
-                        name="phone"
-                        id="phone"
-                        value={mobileNumber}
-                        mb={3}
-                        placeholder="+234 701 331 5567"
-                    />
-                </Box>
             </Grid>
             <br />
-            <Button type="button" sx={{ width: "100%" }} onClick={submitHandle}>
-                Submit
+            <Button type="button" sx={{ width: "100%",border:'1px solid #E6E6E6',
+            borderRadius:'12px',
+            p:['10px 24px',null,null,'14px 24px']
+             }} onClick={submitHandle}>
+                Join the wait list
             </Button>
         </Box>
     );
@@ -253,10 +253,47 @@ const styles = {
     },
     form: {
         backgroundColor: "#fff",
+        borderTop:'6px solid #1741CC',
+        color:'#252627',
+        fontSize:['12px',null,null,'14px'],
+        fontWeight:'300',
         px: "20px",
         pb: "25px",
-        pt: "5px",
+        pt: "15px",
+        span:{
+            color:'red',
+            ml:'5px'
+        },
+        input:{
+            mt:'5px',
+            border:'1px solid #E6E6E6',
+            borderRadius:'12px',
+            p:['10px 24px',null,null,'14px 24px']
+
+        }
     },
+
+    /**
+
+box-sizing: border-box;
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 20px;
+gap: 8px;
+
+width: 660px;
+height: 64px;
+
+border: 1px solid #E6E6E6;
+border-radius: 12px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+     */
     cardTitle: {
         textAlign: ["center", null, null, "left"],
         fontStyle: "normal",

@@ -13,9 +13,9 @@ export const theme: Theme = {
   },
   text: {
     heading: {
-      fontSize: ['45px', null, null, '58px'],
-      lineHeight: '55px',
-      letterSpacing: '-0.5px',
+      fontSize: ['40px', null, null, '58px'],
+      lineHeight: ['50px',null,null,'70px'],
+      letterSpacing: '.4px',
       fontWeight: '800',
       color: '#252627',
     }
@@ -25,16 +25,15 @@ export const theme: Theme = {
       p: {
         fontSize: ['15px', null, null, '20px'],
         color: '#252627',
-        letterSpacing:'-0.5px',
-              opacity:'0.8',
-              lineHeight:'140%',
-        fontWeight:'400'
+        letterSpacing: '0.5px',
+        lineHeight: '140%',
+        fontWeight: '200'
       }
     }
   },
   layout: {
     container: {
-      maxWidth: ['90%', null,null, '1200px', '1200px']
+      maxWidth: ['90%', null, null, '1200px', '1200px']
     }
   }
 }

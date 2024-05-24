@@ -5,7 +5,17 @@
 
 }
 .hero {
-  margin-top: 108px;
+  margin-top: 95px;
+  margin-left: auto;
+}
+
+@media all and (max-width:1100px) {
+
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .hero {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .logo {
   margin-left: 5opx;

@@ -37,7 +37,6 @@ const Hero = () => {
               maxWidth: '580px',
               color: 'white',
               mx: ['auto', null, null, 'initial'],
-              opacity: '0.8'
             }}>Changing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
             </Text>
             <Image className="faces" src={'/assets/Faces.svg'} alt="img" width={120} height={50} />
