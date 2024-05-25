@@ -213,6 +213,7 @@ const RequestService = () => {
             <br />
             <Button type="button" sx={{ width: "100%",border:'1px solid #E6E6E6',
             borderRadius:'12px',
+            opacity:'0.7',
             p:['10px 24px',null,null,'14px 24px']
              }} onClick={submitHandle}>
                 Join the wait list
