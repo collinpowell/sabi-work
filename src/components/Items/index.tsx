@@ -157,11 +157,11 @@ const Items = () => {
               <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_2318_1473)">
                   <rect width="48" height="48" rx="24" transform="matrix(-1 0 0 1 56 20)" fill="white" />
-                  <path d="M34.6666 36L27.6094 43.0572C27.0887 43.5779 27.0887 44.4221 27.6094 44.9428L34.6666 52" stroke="#333333" stroke-width="2" stroke-linecap="round" />
+                  <path d="M34.6666 36L27.6094 43.0572C27.0887 43.5779 27.0887 44.4221 27.6094 44.9428L34.6666 52" stroke="#333333" strokeWidth="2" strokeLinecap="round" />
                 </g>
                 <defs>
-                  <filter id="filter0_d_2318_1473" x="-12" y="0" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <filter id="filter0_d_2318_1473" x="-12" y="0" width="88" height="88" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset />
                     <feGaussianBlur stdDeviation="10" />
@@ -188,11 +188,11 @@ const Items = () => {
               <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_2319_1468)">
                   <rect x="20" y="20" width="48" height="48" rx="24" fill="white" />
-                  <path d="M41.3334 36L48.3906 43.0572C48.9113 43.5779 48.9113 44.4221 48.3906 44.9428L41.3334 52" stroke="#333333" stroke-width="2" stroke-linecap="round" />
+                  <path d="M41.3334 36L48.3906 43.0572C48.9113 43.5779 48.9113 44.4221 48.3906 44.9428L41.3334 52" stroke="#333333" strokeWidth="2" strokeLinecap="round" />
                 </g>
                 <defs>
-                  <filter id="filter0_d_2319_1468" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <filter id="filter0_d_2319_1468" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset />
                     <feGaussianBlur stdDeviation="10" />

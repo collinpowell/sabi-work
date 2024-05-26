@@ -17,6 +17,7 @@ const ButtonM = (props: ButtonProps | any) => {
                 header={modalHeader}
                 modalIsOpen={modalIsOpen}
                 setIsOpen={setIsOpen}
+                phone={props?.phone}
             />
             <Button {...props} onClick={() => {
                 setModalHeader("Join the waitlist");

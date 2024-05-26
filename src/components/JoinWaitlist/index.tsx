@@ -1,16 +1,11 @@
 import { Flex, Box, Input } from "theme-ui"
 import Image from "next/image"
 import ButtonM from "../ButtonM"
-
-/**
- * 
- * @returns 
- * 
- * background: '#1741CC',
-              color: 'white',
- */
+import { useState } from "react"
 
 const JoinWaitlist = ({ blue }: any) => {
+    const [phone,setPhone] = useState<any>()
+    
     return (
         <Flex sx={{
             display: 'flex',
@@ -45,7 +40,9 @@ const JoinWaitlist = ({ blue }: any) => {
                     opacity: '1'
                 }
             }}>
-                <Input id="phone number" name="phone number" placeholder="Enter your phone number" />
+                <Input id="phone number" onChange={(e)=>{
+                    setPhone(e.target.value)
+                }} name="phone number" type="number" required placeholder="Enter your phone number" />
                 <Image src="/assets/phone.svg" alt="img" width={22} height={22} />
             </Box>
             <ButtonM sx={{
@@ -61,7 +58,7 @@ const JoinWaitlist = ({ blue }: any) => {
                 px: '20px',
                 fontSize: '12px',
                 fontWeight: '600'
-            }} modal={true}>
+            }} modal={true} phone={phone}>
                 Join the waiting list
             </ButtonM>
         </Flex>

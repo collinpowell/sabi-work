@@ -37,7 +37,7 @@ const h = 200;
 
 //Modal.setAppElement('#here');
 
-const WaitlistModal = ({ header, modalIsOpen, setIsOpen }: any) => {
+const WaitlistModal = ({ header, modalIsOpen,phone, setIsOpen }: any) => {
     function closeModal() {
         setIsOpen(false);
     }
@@ -72,11 +72,11 @@ const WaitlistModal = ({ header, modalIsOpen, setIsOpen }: any) => {
                         top: "20px",
                         marginRight: "25px",
                     }} onClick={closeModal} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24.9999 14.9999L19.9999 19.9999M19.9999 19.9999L14.9999 24.9999M19.9999 19.9999L24.9999 24.9999M19.9999 19.9999L14.9999 14.9999M36.6666 19.9999C36.6666 29.2047 29.2047 36.6666 19.9999 36.6666C10.7952 36.6666 3.33325 29.2047 3.33325 19.9999C3.33325 10.7952 10.7952 3.33325 19.9999 3.33325C29.2047 3.33325 36.6666 10.7952 36.6666 19.9999Z" stroke="#1741CC" stroke-width="3" stroke-linecap="round" />
+                        <path d="M24.9999 14.9999L19.9999 19.9999M19.9999 19.9999L14.9999 24.9999M19.9999 19.9999L24.9999 24.9999M19.9999 19.9999L14.9999 14.9999M36.6666 19.9999C36.6666 29.2047 29.2047 36.6666 19.9999 36.6666C10.7952 36.6666 3.33325 29.2047 3.33325 19.9999C3.33325 10.7952 10.7952 3.33325 19.9999 3.33325C29.2047 3.33325 36.6666 10.7952 36.6666 19.9999Z" stroke="#1741CC" strokeWidth="3" strokeLinecap="round" />
                     </svg>
 
                 </Box>
-                <RequestService />
+                <RequestService phone={phone}/>
             </Box>
         </Modal>
     );
@@ -99,62 +99,40 @@ border-radius: 20px;
 
 export default WaitlistModal;
 
-const RequestService = () => {
+const RequestService = ({phone}:any) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [mobileNumber, setMobileNumber] = useState("");
+    const [mobileNumber, setMobileNumber] = useState(phone);
     const [company, setCompany] = useState("");
     //do something else
+
+    async function addItem() {
+        const res = await fetch('/api/addItem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name: 'ItemName', value: 'ItemValue' }),
+        });
+    
+        const data = await res.json();
+        console.log(data);
+    }
+    
     async function submitHandle() {
         if (name == "" || email == "" || mobileNumber == "") {
-            toast.error("Some Fields Are Empty");
+            alert("Some Fields Are Empty");
             return;
         }
-        const id = toast.loading("Uploading Data...");
+        
 
         try {
-            const res = await axios.post(APIURL + "/api/near/sponsors", {
-                name,
-                email,
-                mobileNumber,
-                type: "SPONSOR",
-            });
+         
 
-            console.log(id, "sending Data", name, email, mobileNumber, company);
 
-            await axios.post("/api/requestService", {
-                name: name,
-                email: email,
-                phone: mobileNumber,
-                company: company,
-            });
-            console.log(res);
-            toast.update(id, {
-                render: res.data.message,
-                type: "success",
-                isLoading: false,
-                autoClose: 3000,
-                hideProgressBar: false,
-            });
         } catch (error) {
             console.log(error);
-            // if (error?.response?.data) {
-            //     toast.update(id, {
-            //         render: error.response.data.message,
-            //         type: "error",
-            //         isLoading: false,
-            //         autoClose: 3000,
-            //         hideProgressBar: false,
-            //     });
-            // } else {
-            //     toast.update(id, {
-            //         render: error.message,
-            //         type: "error",
-            //         isLoading: false,
-            //         autoClose: 2000,
-            //         hideProgressBar: false,
-            //     });
-            // }
+            
         }
     }
     return (
