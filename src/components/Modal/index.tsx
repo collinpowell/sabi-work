@@ -128,6 +128,8 @@ const RequestService = ({ phone,closeModal }: any) => {
 
         try {
             await addItem()
+            closeModal()
+
             toast({
                 className: cn(
                   "top-0 right-0 left-0 mx-auto flex fixed md:max-w-[400px] md:top-4 md:right-4"
@@ -135,7 +137,6 @@ const RequestService = ({ phone,closeModal }: any) => {
                 title: "Success",
                 description: "Joined Successfully!",
               });
-              closeModal()
         } catch (error) {
             console.log(error);
         }
