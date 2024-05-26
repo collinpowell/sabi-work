@@ -5,19 +5,21 @@ import clientPromise from "@/lib/mongodb";
 
 interface RequestBody {
   name: string;
-  value: string;
+  email: string;
+  mobileNumber: string;
+  company: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
       try {
           const client = await clientPromise;
-          const db = client.db('yourDatabaseName');
+          const db = client.db('sabi');
 
-          const { name, value }: RequestBody = req.body;
+          const { name, email, mobileNumber, company  }: RequestBody = req.body;
 
-          const collection = db.collection('yourCollectionName');
-          const result = await collection.insertOne({ name, value });
+          const collection = db.collection('waitlist');
+          const result = await collection.insertOne({ name, email, mobileNumber, company  });
 
           res.status(201).json({ message: 'Item added successfully', result });
       } catch (e: any) {

@@ -1,12 +1,11 @@
 /** @jsxImportSource theme-ui */
 
-import { Box, Label, Heading, Flex, Text, Input, Grid, Button } from "theme-ui";
+import { Box, Label, Heading, Text, Input, Grid, Button } from "theme-ui";
 import Modal from "react-modal";
-const APIURL = ''
-import { toast } from "react-toastify";
 import { useState } from "react";
-import axios from "axios";
+import { useToast } from "../useToast";
 /* Rectangle 377 */
+import { cn } from "@/lib/utils";
 
 
 const customStyles = {
@@ -19,7 +18,7 @@ const customStyles = {
         transform: "translate(-50%, -50%)",
         border: "none",
         borderRadius: "20px",
-        boxShadow:'inset 0px -12px 0px #1741CC',
+        boxShadow: 'inset 0px -12px 0px #1741CC',
         maxWidth: "550px",
         width: "-webkit-fill-available",
         padding: "0",
@@ -37,7 +36,7 @@ const h = 200;
 
 //Modal.setAppElement('#here');
 
-const WaitlistModal = ({ header, modalIsOpen,phone, setIsOpen }: any) => {
+const WaitlistModal = ({ header, modalIsOpen, phone, setIsOpen }: any) => {
     function closeModal() {
         setIsOpen(false);
     }
@@ -58,13 +57,13 @@ const WaitlistModal = ({ header, modalIsOpen,phone, setIsOpen }: any) => {
                     textAlign: "left",
                     padding: ['15px'],
                     h2: {
-                        fontSize: ['20px',null,null,'32px']
+                        fontSize: ['20px', null, null, '32px']
                     }
                 }}>
                     <Heading sx={{ textAlign: "left" }}>
                         Join the Waiting List
                     </Heading>
-                    <Text as='p' sx={{ fontSize: ['13px',null,null,'16px'],maxWidth:'98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
+                    <Text as='p' sx={{ fontSize: ['13px', null, null, '16px'], maxWidth: '98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
 
                     <svg style={{
                         position: "absolute",
@@ -76,7 +75,7 @@ const WaitlistModal = ({ header, modalIsOpen,phone, setIsOpen }: any) => {
                     </svg>
 
                 </Box>
-                <RequestService phone={phone}/>
+                <RequestService phone={phone} closeModal={closeModal} />
             </Box>
         </Modal>
     );
@@ -99,7 +98,9 @@ border-radius: 20px;
 
 export default WaitlistModal;
 
-const RequestService = ({phone}:any) => {
+const RequestService = ({ phone,closeModal }: any) => {
+    const { toast } = useToast();
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState(phone);
@@ -107,32 +108,36 @@ const RequestService = ({phone}:any) => {
     //do something else
 
     async function addItem() {
-        const res = await fetch('/api/addItem', {
+        const res = await fetch('/api/hello', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name: 'ItemName', value: 'ItemValue' }),
+            body: JSON.stringify({ name, email, mobileNumber, company }),
         });
-    
+
         const data = await res.json();
         console.log(data);
     }
-    
+
     async function submitHandle() {
-        if (name == "" || email == "" || mobileNumber == "") {
+        if (name == "" || mobileNumber == "") {
             alert("Some Fields Are Empty");
             return;
         }
-        
 
         try {
-         
-
-
+            await addItem()
+            toast({
+                className: cn(
+                  "top-0 right-0 left-0 mx-auto flex fixed md:max-w-[400px] md:top-4 md:right-4"
+                ),
+                title: "Success",
+                description: "Joined Successfully!",
+              });
+              closeModal()
         } catch (error) {
             console.log(error);
-            
         }
     }
     return (
@@ -172,8 +177,8 @@ const RequestService = ({phone}:any) => {
                         placeholder="e.g. Painter, carpenter, electrician, cleaner..."
                     />
                 </Box>
-                
-             
+
+
 
                 <Box>
                     <Label htmlFor="email">Email (optional)</Label>
@@ -189,11 +194,15 @@ const RequestService = ({phone}:any) => {
                 </Box>
             </Grid>
             <br />
-            <Button type="button" sx={{ width: "100%",border:'1px solid #E6E6E6',
-            borderRadius:'12px',
-            opacity:'0.7',
-            p:['10px 24px',null,null,'14px 24px']
-             }} onClick={submitHandle}>
+            <Button type="button" disabled={!name || !mobileNumber || !company} sx={{
+                width: "100%", border: '1px solid #E6E6E6',
+                borderRadius: '12px',
+                //opacity: '0.4',
+                p: ['10px 24px', null, null, '14px 24px'],
+                ':disabled':{
+                    opacity:'0.4'
+                }
+            }} onClick={submitHandle}>
                 Join the wait list
             </Button>
         </Box>
@@ -232,22 +241,22 @@ const styles = {
     },
     form: {
         backgroundColor: "#fff",
-        borderTop:'6px solid #1741CC',
-        color:'#252627',
-        fontSize:['12px',null,null,'14px'],
-        fontWeight:'300',
+        borderTop: '6px solid #1741CC',
+        color: '#252627',
+        fontSize: ['12px', null, null, '14px'],
+        fontWeight: '300',
         px: "20px",
         pb: "25px",
         pt: "15px",
-        span:{
-            color:'red',
-            ml:'5px'
+        span: {
+            color: 'red',
+            ml: '5px'
         },
-        input:{
-            mt:'5px',
-            border:'1px solid #E6E6E6',
-            borderRadius:'12px',
-            p:['10px 24px',null,null,'14px 24px']
+        input: {
+            mt: '5px',
+            border: '1px solid #E6E6E6',
+            borderRadius: '12px',
+            p: ['10px 24px', null, null, '14px 24px']
 
         }
     },
