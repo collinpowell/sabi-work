@@ -7,22 +7,22 @@ const footerContacts = ["info@sabiwork.com", "+234 900 566 712 300"];
 export const footerSocials = [
   {
     title: "Facebook",
-    href: "https://web.facebook.com/",
+    href: "https://web.facebook.com/sabiworkapp",
     image: "/facebook.svg",
   },
   {
     title: "Twitter",
-    href: "https://twitter.com/",
+    href: "https://x.com/sabiworkapp",
     image: "/twitter.svg",
   },
   {
     title: "Instagram",
-    href: "https://www.instagram.com/ ",
+    href: "https://www.instagram.com/sabiworkapp/",
     image: "/instagram.svg",
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://linkedin.com/company/sabiwork-ng/",
     image: "/linkedIn.svg",
   },
 ];
