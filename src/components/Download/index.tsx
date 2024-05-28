@@ -30,7 +30,6 @@ const Download = () => {
           width: '100%',
           p: {
             my: '30px',
-            maxWidth: '370px',
 
           },
           textAlign: 'center'
@@ -38,11 +37,17 @@ const Download = () => {
         }}>
           <Heading sx={{
             marginTop: '80px',
-            color: 'white'
+            color: 'white',
+            maxWidth:['310px',null,null,'initial'],
+            px:['10px',null,null,'initial'],
+            mx:'auto'
           }} className={style.title}>Download the App
           </Heading>
           <Text as='p' sx={{
             marginBottom: '100px',
+            maxWidth:['310px',null,null,'initial'],
+            mx:'auto',
+            px:['10px',null,null,'initial'],
             color: 'white',
             display: 'inline-block',
           }}>The best place where you can find and hire skilled professionals within your proximity.

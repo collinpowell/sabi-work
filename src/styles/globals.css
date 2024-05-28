@@ -63,3 +63,15 @@ input[type=number] {
   border-radius: 1rem;
   background-color: rgba(23, 65, 204, 1);
 }
+
+.ReactModal__Content{
+  max-width: 550px;
+}
+
+@media all and (max-width:500px) {
+
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .ReactModal__Content{
+    max-width: 95%;
+  }
+}

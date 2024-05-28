@@ -19,7 +19,6 @@ const customStyles = {
         border: "none",
         borderRadius: "20px",
         boxShadow: 'inset 0px -12px 0px #1741CC',
-        maxWidth: "550px",
         width: "-webkit-fill-available",
         maxHeight: '99%',
         padding: "0",
@@ -59,15 +58,16 @@ const WaitlistModal = ({ modalIsOpen, phone, setIsOpen }: any) => {
                         fontSize: ['20px', null, null, '32px']
                     }
                 }}>
-                    <Heading sx={{ textAlign: "left" }}>
+                    <Heading sx={{ textAlign: "left" ,lineHeight:['30px',null,null,'50px']}}>
                         Join the Waiting List
                     </Heading>
                     <Text as='p' sx={{ fontSize: ['13px', null, null, '16px'], maxWidth: '98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
 
-                    <svg style={{
+                    <svg sx={{
                         position: "absolute",
                         right: "0",
-                        top: "20px",
+                        top: ['15px',null,null,"20px"],
+                        size:['30px',null,null,'40px'],
                         marginRight: "25px",
                     }} onClick={closeModal} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.9999 14.9999L19.9999 19.9999M19.9999 19.9999L14.9999 24.9999M19.9999 19.9999L24.9999 24.9999M19.9999 19.9999L14.9999 14.9999M36.6666 19.9999C36.6666 29.2047 29.2047 36.6666 19.9999 36.6666C10.7952 36.6666 3.33325 29.2047 3.33325 19.9999C3.33325 10.7952 10.7952 3.33325 19.9999 3.33325C29.2047 3.33325 36.6666 10.7952 36.6666 19.9999Z" stroke="#1741CC" strokeWidth="3" strokeLinecap="round" />
@@ -287,7 +287,7 @@ const styles = {
         borderTop: '6px solid #1741CC',
         color: '#252627',
         fontSize: ['12px', null, null, '14px'],
-        fontWeight: '300',
+        fontWeight: '400',
         px: "20px",
         pt: "15px",
         span: {
