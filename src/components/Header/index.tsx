@@ -112,7 +112,7 @@ const Header = () => {
                 >
                   {/* Hamburger Icon SVG */}
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 11H32M8 20H32M8 29H32" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M8 11H32M8 20H32M8 29H32" stroke="white" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </Box>
                 <Box
@@ -124,7 +124,7 @@ const Header = () => {
                 >
                   {/* Cancel Icon SVG */}
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M26 14L14 26M26 26L14 14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M26 14L14 26M26 26L14 14" stroke="white" strokeWidth="2" strokeLinecap="round" />
                   </svg>
 
 
