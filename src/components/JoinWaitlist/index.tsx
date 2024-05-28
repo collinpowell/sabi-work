@@ -16,15 +16,16 @@ const JoinWaitlist = ({ blue }: any) => {
                 my: '15px',
                 width: 'fit-content',
                 display: 'flex',
-                fontSize: '12px',
+                fontSize: '14px',
                 position: 'relative',
                 input: {
                     width: '270px',
                     color: '#5E80ED',
                     background: '#D1DBFA',
                     pl: '45px',
-                    py: '17px',
+                    py: '15px',
                     borderRadius: '12px',
+                    border:'1.5px solid white',
                     '::placeholder': {
                         color: '#5E80ED',
                         fontWeight: '600'
@@ -50,13 +51,13 @@ const JoinWaitlist = ({ blue }: any) => {
                 display: ['flex'],
                 my: 'auto',
                 mx: ['auto', null, null, 'initial'],
-                borderRadius: '12px',
+                borderRadius: '100px',
                 background: blue ? '#1741CC' : 'white',
                 color: blue ? 'white' : '#1741CC',
                 height: 'fit-content',
                 py: '17px',
                 px: '20px',
-                fontSize: '12px',
+                fontSize: '14px',
                 fontWeight: '600'
             }} modal={true} phone={phone}>
                 Join the waiting list

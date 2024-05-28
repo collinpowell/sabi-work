@@ -1,12 +1,12 @@
 /** @jsxImportSource theme-ui */
 
-import { Box, Label, Heading, Text, Input, Grid, Button } from "theme-ui";
+import { Box, Label, Heading, Text, Input, Spinner, Grid, Button, Flex } from "theme-ui";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToast } from "../useToast";
-/* Rectangle 377 */
 import { cn } from "@/lib/utils";
 
+import CustomDropdown from "../CustomSelect";
 
 const customStyles = {
     content: {
@@ -21,6 +21,7 @@ const customStyles = {
         boxShadow: 'inset 0px -12px 0px #1741CC',
         maxWidth: "550px",
         width: "-webkit-fill-available",
+        maxHeight: '99%',
         padding: "0",
         paddingBottom: "30px",
         background: "linear-gradient(180deg, #EDF1FD 43.88%, #FFFFFF 70.04%)",
@@ -34,9 +35,8 @@ const customStyles = {
 const w = 205;
 const h = 200;
 
-//Modal.setAppElement('#here');
 
-const WaitlistModal = ({ header, modalIsOpen, phone, setIsOpen }: any) => {
+const WaitlistModal = ({ modalIsOpen, phone, setIsOpen }: any) => {
     function closeModal() {
         setIsOpen(false);
     }
@@ -47,8 +47,7 @@ const WaitlistModal = ({ header, modalIsOpen, phone, setIsOpen }: any) => {
             onRequestClose={closeModal}
             style={customStyles as any}
             closeTimeoutMS={500}
-            contentLabel="Modal"
-        >
+            contentLabel="Modal">
             <Box sx={{
                 width: '100%',
             }}>
@@ -98,13 +97,18 @@ border-radius: 20px;
 
 export default WaitlistModal;
 
-const RequestService = ({ phone,closeModal }: any) => {
+const RequestService = ({ phone, closeModal }: any) => {
     const { toast } = useToast();
 
+    const [loading, setLoading] = useState(false);
+
     const [name, setName] = useState("");
+    const [locationInfo, setLocationInfo] = useState<any>();
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState(phone);
-    const [company, setCompany] = useState("");
+    const [service, setService] = useState("");
+    const [state, setState] = useState("");
+    const [town, setTown] = useState("");
     //do something else
 
     async function addItem() {
@@ -113,18 +117,37 @@ const RequestService = ({ phone,closeModal }: any) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, email, mobileNumber, company }),
+            body: JSON.stringify({ name, email, mobileNumber, service, state, town }),
         });
 
         const data = await res.json();
         console.log(data);
     }
 
+    useEffect(() => {
+        getLocationInfo()
+    }, [])
+
+    async function getLocationInfo() {
+        try {
+            const res = await fetch('https://nigeria-states-towns-lga.onrender.com/api/all');
+
+            const data = await res.json();
+            console.log(data);
+            setLocationInfo(data)
+        } catch (error: any) {
+            alert(error?.message)
+        }
+
+    }
+
     async function submitHandle() {
-        if (name == "" || mobileNumber == "") {
+        if (name == "" || mobileNumber == "" || service == "" || state == "" || town == "") {
             alert("Some Fields Are Empty");
             return;
         }
+        setLoading(true)
+
 
         try {
             await addItem()
@@ -132,79 +155,98 @@ const RequestService = ({ phone,closeModal }: any) => {
 
             toast({
                 className: cn(
-                  "top-0 right-0 left-0 mx-auto flex fixed md:max-w-[400px] md:top-4 md:right-4"
+                    "top-0 right-0 left-0 mx-auto flex fixed md:max-w-[400px] md:top-4 md:right-4"
                 ),
                 title: "Success",
                 description: "Joined Successfully!",
-              });
+            });
         } catch (error) {
             console.log(error);
+            alert('Failed,Try Again')
         }
+        setLoading(false)
+
     }
     return (
         <Box as="form" sx={styles.form}>
             <Grid width={[250, null, 400]} gap={2} columns={[2, "1fr 2fr"]}>
                 <Box >
-                    <Label htmlFor="fullName">Full Name <span>*</span></Label>
+                    <Label mb={1} htmlFor="fullName">Full Name <span>*</span></Label>
                     <Input
                         name="fullName"
                         id="fullName"
                         onChange={(e) => setName(e.target.value)}
-                        mb={3}
+                        mb={2}
                         value={name}
                         placeholder="Type your name here..."
                     />
                 </Box>
                 <Box>
-                    <Label htmlFor="phone">Phone Number <span>*</span></Label>
+                    <Label mb={1} htmlFor="phone">Phone Number <span>*</span></Label>
                     <Input
                         onChange={(e) => setMobileNumber(e.target.value)}
                         type="number"
                         name="phone"
                         id="phone"
                         value={mobileNumber}
-                        mb={3}
+                        mb={2}
                         placeholder="070 0000 0000"
                     />
                 </Box>
                 <Box>
-                    <Label htmlFor="company">Service you offer <span>*</span></Label>
+                    <Label mb={1} htmlFor="company">Service you offer <span>*</span></Label>
                     <Input
                         name="company"
                         id="company"
-                        value={company}
-                        onChange={(e) => setCompany(e.target.value)}
-                        mb={3}
+                        value={service}
+                        onChange={(e) => setService(e.target.value)}
+                        mb={2}
                         placeholder="e.g. Painter, carpenter, electrician, cleaner..."
                     />
                 </Box>
 
-
-
+                <Flex sx={{
+                    gap: '5px',
+                }}>
+                    <CustomDropdown label={'State'} options={locationInfo?.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setState(option)} />
+                    <CustomDropdown label={'Town/Region'} options={locationInfo?.find((item: { name: any }) => item.name == state)?.towns.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setTown(option)} />
+                </Flex>
                 <Box>
-                    <Label htmlFor="email">Email (optional)</Label>
+                    <Label mb={1} htmlFor="email">Email (optional)</Label>
                     <Input
                         type="email"
                         name="email"
                         onChange={(e) => setEmail(e.target.value)}
                         id="email"
-                        mb={3}
+                        mb={2}
                         value={email}
                         placeholder="example@google.com"
                     />
                 </Box>
             </Grid>
             <br />
-            <Button type="button" disabled={!name || !mobileNumber || !company} sx={{
+            <Button type="button" disabled={loading || !name || !mobileNumber || !service || !state || !town} sx={{
                 width: "100%", border: '1px solid #E6E6E6',
-                borderRadius: '12px',
+                borderRadius: '100px',
                 //opacity: '0.4',
                 p: ['10px 24px', null, null, '14px 24px'],
-                ':disabled':{
-                    opacity:'0.4'
-                }
+                ':disabled': {
+                    opacity: '0.4'
+                },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
             }} onClick={submitHandle}>
-                Join the wait list
+                {loading ? (
+                    <Spinner
+                        sx={{
+                            color: 'background',
+                            height:'20px'
+                        }}
+                    />
+                ) : (
+                    'Join the wait list')}
             </Button>
         </Box>
     );
@@ -247,42 +289,18 @@ const styles = {
         fontSize: ['12px', null, null, '14px'],
         fontWeight: '300',
         px: "20px",
-        pb: "25px",
         pt: "15px",
         span: {
             color: 'red',
             ml: '5px'
         },
-        input: {
-            mt: '5px',
+        'input,select': {
             border: '1px solid #E6E6E6',
             borderRadius: '12px',
             p: ['10px 24px', null, null, '14px 24px']
 
         }
     },
-
-    /**
-
-box-sizing: border-box;
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 8px 20px;
-gap: 8px;
-
-width: 660px;
-height: 64px;
-
-border: 1px solid #E6E6E6;
-border-radius: 12px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
-
-     */
     cardTitle: {
         textAlign: ["center", null, null, "left"],
         fontStyle: "normal",

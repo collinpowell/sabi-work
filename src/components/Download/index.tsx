@@ -9,6 +9,14 @@ const Download = () => {
       background: 'url(/assets/download-bg.svg) no-repeat',
       backgroundSize: 'cover',
       borderRadius: '50px',
+      img:{
+        ':nth-of-type(1)': {
+          display: ['none', null, null, 'block']
+        },
+        ':nth-of-type(2)': {
+          display: ['block', null, null, 'none']
+        }
+      }
     }}>
       <Flex sx={{
         flexDirection: ['column', null, null, 'row'],
@@ -47,6 +55,7 @@ const Download = () => {
 
           </Box>
           <Image src={'/assets/phone pic.png'} alt="img" width={905} height={799} />
+          <Image src={'/assets/mobile-phone.png'} alt="img" width={905} height={799} />
         </Box>
       </Flex>
     </Container>

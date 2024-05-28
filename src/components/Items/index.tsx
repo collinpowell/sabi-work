@@ -108,7 +108,6 @@ const Items = () => {
             }}
             modules={[Autoplay]}
           >
-
             <SwiperSlide>
               <Image src="/assets/items/1.jpg" alt="img" width={600} height={200} />
             </SwiperSlide>
@@ -132,7 +131,6 @@ const Items = () => {
             <SwiperSlide>
               <Image src="/assets/items/6.jpg" alt="img" width={600} height={200} />
             </SwiperSlide>
-
           </Swiper>
 
           <Box

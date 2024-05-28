@@ -68,7 +68,7 @@ const FAQ = () => {
                 background: '#03091C',
                 color: 'white',
                 padding: ['25px', null, null, '100px'],
-                borderRadius: '50px',
+                borderRadius: ['40px',null,null,'50px'],
                 h2: {
                     mb: '64px'
                 }

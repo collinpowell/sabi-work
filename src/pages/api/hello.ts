@@ -7,7 +7,9 @@ interface RequestBody {
   name: string;
   email: string;
   mobileNumber: string;
-  company: string;
+  service: string;
+  state: string;
+  town: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -16,10 +18,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           const client = await clientPromise;
           const db = client.db('sabi');
 
-          const { name, email, mobileNumber, company  }: RequestBody = req.body;
+          const { name, email, mobileNumber, service, state, town }: RequestBody = req.body;
 
           const collection = db.collection('waitlist');
-          const result = await collection.insertOne({ name, email, mobileNumber, company  });
+          const result = await collection.insertOne({ name, email, mobileNumber, service, state, town  });
 
           res.status(201).json({ message: 'Item added successfully', result });
       } catch (e: any) {
