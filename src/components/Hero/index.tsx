@@ -20,7 +20,7 @@ const Hero = () => {
               my: '30px'
             },
             '.faces': {
-              my: '15px',
+              my: '20px',
               mx: ['auto', null, null, 'initial'],
               justifyContent: ['center', null, null, 'left']
             }

@@ -13,7 +13,8 @@ const Benefits = () => {
         <Box sx={{
           width: '100%',
           p:{
-            my:'60px',
+            mt:['20px',null,null,'60px'],
+            mb:'60px',
           },
 
         }}>

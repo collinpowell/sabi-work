@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Container, Box, Flex, Divider } from "theme-ui";
 
-const footerContacts = ["info@sabiwork.com", "+234 900 566 712 300"];
+const footerContacts = ["info@sabiwork.app", "+234 704 4284 237"];
 
 
 export const footerSocials = [
@@ -68,7 +68,7 @@ const Footer = () => {
           <Box sx={{
 
           }}>
-            <Image src="/assets/Logo.svg" alt="img" width={200} height={100} />
+            <Image src="/logo-footer.svg" alt="img" width={200} height={100} />
           </Box>
           <Box sx={{
             display: 'grid',
