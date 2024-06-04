@@ -22,36 +22,36 @@ const QuestionMark = () => {
 
 const faq = [
     {
-        question: 'What is Sabiwork?',
-        answer: 'Sabiwork is an app that connects individuals with skilled service providers in their area. Whether you need a plumber, electrician, mechanic, or any other professional, Sabiwork helps you find and hire reliable services quickly and easily.'
+        question: 'What is Findam?',
+        answer: 'Findam is an app that connects individuals with skilled service providers in their area. Whether you need a plumber, electrician, mechanic, or any other professional, Findam helps you find and hire reliable services quickly and easily.'
     },
     {
-        question: 'Is Sabiwork free?',
+        question: 'Is Findam free?',
         answer: 'Both service providers and clients can download and use the app for free, no subscription fee attracted to both users.'
     },
     {
-        question: 'Can I trust the professionals on Sabiwork?',
-        answer: 'We vet all service providers before they are listed on Sabiwork. Additionally, each provider has a profile with customer reviews and ratings to help you make an informed decision.'
+        question: 'Can I trust the professionals on Findam?',
+        answer: 'We vet all service providers before they are listed on Findam. Additionally, each provider has a profile with customer reviews and ratings to help you make an informed decision.'
     },
     {
-        question: 'How can service providers make money on Sabiwork?',
-        answer: 'Service providers can make money from Sabiwork by being hired to do a job, every transaction you make would be between you and the client.',
+        question: 'How can service providers make money on Findam?',
+        answer: 'Service providers can make money from Findam by being hired to do a job, every transaction you make would be between you and the client.',
     },
     {
         question: 'Can I communicate with the service provider before booking?',
         answer: 'Yes, you can use the in-app messaging feature to communicate with service providers before making a booking to discuss your needs, negotiate, and ask any questions.',
     },
     {
-        question: 'How do I contact Sabiwork Customer Support?',
-        answer: 'You can reach our customer support team via support@sabiwork.app, you can also reach us through the app or via our social media pages. We are here to help with any questions or issues you may have.',
+        question: 'How do I contact Findam Customer Support?',
+        answer: 'You can reach our customer support team via hello@findam.co, you can also reach us through the app or via our social media pages. We are here to help with any questions or issues you may have.',
     },
     {
-        question: 'Can I hire or make transactions outside of sabiwork?',
-        answer: 'To ensure a smooth experience between clients and service providers, we strongly recommend using the app for all hiring and transactions. Any arrangement or payments made outside of Sabiwork are at the clients own risk, and Sabiwork will not be responsible for any associated costs.',
+        question: 'Can I hire or make transactions outside of findam?',
+        answer: 'To ensure a smooth experience between clients and service providers, we strongly recommend using the app for all hiring and transactions. Any arrangement or payments made outside of Findam are at the clients own risk, and Findam will not be responsible for any associated costs.',
     },
     {
-        question: 'Is Sabiwork nationwide?',
-        answer: 'No, Sabiwork only operates in 3 states for now which are Lagos State, Rivers State, and Abuja. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
+        question: 'Is Findam nationwide?',
+        answer: 'No, Findam only operates in 3 states for now which are Lagos State, Rivers State, and Abuja. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
     }
 
 

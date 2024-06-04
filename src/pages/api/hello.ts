@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'POST') {
       try {
           const client = await clientPromise;
-          const db = client.db('sabi');
+          const db = client.db('findam');
 
           const { name, email, mobileNumber, service, state, town }: RequestBody = req.body;
 

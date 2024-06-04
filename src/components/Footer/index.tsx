@@ -1,28 +1,28 @@
 import Image from "next/image"
 import { Container, Box, Flex, Divider } from "theme-ui";
 
-const footerContacts = ["info@sabiwork.app", "+234 704 4284 237"];
+const footerContacts = ["hello@findam.co", "+234 704 4284 237"];
 
 
 export const footerSocials = [
   {
     title: "Facebook",
-    href: "https://web.facebook.com/sabiworkapp",
+    href: "https://web.facebook.com/findamapp",
     image: "/facebook.svg",
   },
   {
     title: "Twitter",
-    href: "https://x.com/sabiworkapp",
+    href: "https://x.com/findamHQ?t=CraBl5INpVim6cg76HIJPA&s=09",
     image: "/twitter.svg",
   },
   {
     title: "Instagram",
-    href: "https://www.instagram.com/sabiworkapp/",
+    href: "https://www.instagram.com/findamhq?igsh=dDl6bHV5bjJpYW5v",
     image: "/instagram.svg",
   },
   {
     title: "LinkedIn",
-    href: "https://linkedin.com/company/sabiwork-ng/",
+    href: "https://linkedin.com/company/findam-ng/",
     image: "/linkedIn.svg",
   },
 ];
@@ -143,7 +143,7 @@ const Footer = () => {
           color: '#252627',
 
         }}
-        >&copy; 2024 Sabiwork. All rights reserved</Box>
+        >&copy; 2024 Findam. All rights reserved</Box>
       </Container>
     </>
 
