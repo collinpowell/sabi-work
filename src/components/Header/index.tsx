@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Box, Flex, Text, Container, Button } from "theme-ui";
 import ButtonM from "../ButtonM";
 import { useState } from "react";
-
+import Link from "next/link";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,8 +15,8 @@ const Header = () => {
       position: ['fixed', null, null, 'sticky'],
       top: ['initial', null, null, 0],
       bottom: [0, null, null, 'initial'],
-        zIndex: 200,
-        width: '100%',
+      zIndex: 200,
+      width: '100%',
     }}>
       <Box sx={{
         background: isOpen ? ['white'] : ['rgba(255, 255, 255, 0.6)', null, null, 'white'],
@@ -32,7 +32,13 @@ const Header = () => {
             justifyContent: 'space-between',
             width: '100%',
           }}>
-            <Image src={'/assets/Logo.svg'} alt="img" width={150} height={65} />
+              <Image src={'/assets/Logo.svg'} onClick={()=>{
+                window.scroll({
+                  top: 0, 
+                  behavior: 'smooth'
+                });
+              }} alt="img" width={150} height={65} />
+            
             <Box sx={{
               display: ['none', null, null, 'flex'],
               justifyContent: 'space-between',
@@ -51,7 +57,7 @@ const Header = () => {
                   display: 'flex',
                   borderRadius: '30px',
                   border: '1px solid #1741CC',
-                  
+
                 }}>
                   Join our community
                 </Button>
@@ -65,7 +71,7 @@ const Header = () => {
                 p: {
                   my: 'auto',
                   color: 'white',
-                  
+
                 },
                 img: {
                   my: 'auto',
@@ -155,29 +161,29 @@ const Header = () => {
             justifyContent: 'space-between',
             width: '100%',
           }}>
-     
-              <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
-                <Button sx={{
-                  background: '#EDF0FD',
-                  color: '#1741CC',
-                  display: 'flex',
-                  borderRadius: '30px',
-                  border: '1px solid #1741CC',
-                  
-                }}>
-                  Join our community
-                </Button>
-              </a>
-              <ButtonM sx={{
-                background: '#1741CC',
-                color: 'white',
+
+            <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
+              <Button sx={{
+                background: '#EDF0FD',
+                color: '#1741CC',
                 display: 'flex',
                 borderRadius: '30px',
-                border: '1px solid black',
-              }}
-                modal={true}>
-                Join the waiting list
-              </ButtonM>
+                border: '1px solid #1741CC',
+
+              }}>
+                Join our community
+              </Button>
+            </a>
+            <ButtonM sx={{
+              background: '#1741CC',
+              color: 'white',
+              display: 'flex',
+              borderRadius: '30px',
+              border: '1px solid black',
+            }}
+              modal={true}>
+              Join the waiting list
+            </ButtonM>
           </Flex>
 
         </Container >

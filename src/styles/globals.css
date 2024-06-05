@@ -18,6 +18,8 @@
   src: url(../tt_fors/TT\ Fors\ Trial\ ExtraBold.ttf);
 }
 
+html { scroll-behavior: smooth !important; }
+
 body {
   overflow-x: hidden;
 }
