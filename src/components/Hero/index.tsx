@@ -27,7 +27,7 @@ const Hero = () => {
 
           }}>
             <Heading sx={{
-              marginTop: ['45px',null,null,'85px'],
+              marginTop: ['45px',null,null,'70px'],
               color: 'white',
               pt: '40px',
               marginBottom: '30px'
