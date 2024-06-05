@@ -23,7 +23,7 @@ const QuestionMark = () => {
 const faq = [
     {
         question: 'What is Findam?',
-        answer: 'Findam is an app that connects individuals with skilled service providers in their area. Whether you need a plumber, electrician, mechanic, or any other professional, Findam helps you find and hire reliable services quickly and easily.'
+        answer: 'Findam is an app that connects individuals with skilled service providers in their area, and allows you to purchase second-hand home made items. Whether you need a plumber, electrician, mechanic, or any other professional, Findam helps you find and hire reliable services quickly and easily.'
     },
     {
         question: 'Is Findam free?',
@@ -51,7 +51,7 @@ const faq = [
     },
     {
         question: 'Is Findam nationwide?',
-        answer: 'No, Findam only operates in 3 states for now which are Lagos State, Rivers State, and Abuja. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
+        answer: 'Yes, Findam is available in all 36 states. We aim is continually expanding its service areas. Enter your location in the app to see if we have service providers in your area.',
     }
 
 
