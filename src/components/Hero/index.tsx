@@ -34,7 +34,7 @@ const Hero = () => {
             }}>Find & hire the best skilled professionals
             </Heading>
             <Text as='p' sx={{
-              maxWidth: '580px',
+              maxWidth: '600px',
               color: 'white',
               mx: ['auto', null, null, 'initial'],
             }}>We are changing the hiring landscape by seamlessly connecting skilled professionals with prospective clients, enhancing opportunities for both parties to collaborate and succeed.
