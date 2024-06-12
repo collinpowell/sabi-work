@@ -81,8 +81,6 @@ const Header = () => {
               }}
                 modal={true}>
                 <Text as='p'>Join the waiting list</Text>
-
-                <Image src="/assets/App google.svg" alt="img" width={40} height={15} />
               </ButtonM>
             </Box>
 
