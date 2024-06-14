@@ -50,7 +50,7 @@ const Header = () => {
                 padding: '15px 20px',
               }
             }}>
-              <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
+              {/* <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
                 <Button sx={{
                   background: '#EDF0FD',
                   color: '#1741CC',
@@ -61,7 +61,7 @@ const Header = () => {
                 }}>
                   Join our community
                 </Button>
-              </a>
+              </a> */}
               <ButtonM sx={{
                 background: '#1741CC',
                 color: 'white',
@@ -160,7 +160,7 @@ const Header = () => {
             width: '100%',
           }}>
 
-            <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://chat.whatsapp.com/IUnx7f1AwJWGqkQj1F5wex" target="_blank" rel="noopener noreferrer">
               <Button sx={{
                 background: '#EDF0FD',
                 color: '#1741CC',
@@ -171,7 +171,7 @@ const Header = () => {
               }}>
                 Join our community
               </Button>
-            </a>
+            </a> */}
             <ButtonM sx={{
               background: '#1741CC',
               color: 'white',
