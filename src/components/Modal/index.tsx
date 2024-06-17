@@ -58,7 +58,7 @@ const WaitlistModal = ({ modalIsOpen, phone, setIsOpen }: any) => {
                         fontSize: ['20px', null, null, '32px']
                     }
                 }}>
-                    <Heading sx={{ textAlign: "left" ,lineHeight:['30px',null,null,'50px']}}>
+                    <Heading sx={{ textAlign: "left", lineHeight: ['30px', null, null, '50px'] }}>
                         Join the Waiting List
                     </Heading>
                     <Text as='p' sx={{ fontSize: ['13px', null, null, '16px'], maxWidth: '98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
@@ -66,8 +66,8 @@ const WaitlistModal = ({ modalIsOpen, phone, setIsOpen }: any) => {
                     <svg sx={{
                         position: "absolute",
                         right: "0",
-                        top: ['15px',null,null,"20px"],
-                        size:['30px',null,null,'40px'],
+                        top: ['15px', null, null, "20px"],
+                        size: ['30px', null, null, '40px'],
                         marginRight: "25px",
                     }} onClick={closeModal} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.9999 14.9999L19.9999 19.9999M19.9999 19.9999L14.9999 24.9999M19.9999 19.9999L24.9999 24.9999M19.9999 19.9999L14.9999 14.9999M36.6666 19.9999C36.6666 29.2047 29.2047 36.6666 19.9999 36.6666C10.7952 36.6666 3.33325 29.2047 3.33325 19.9999C3.33325 10.7952 10.7952 3.33325 19.9999 3.33325C29.2047 3.33325 36.6666 10.7952 36.6666 19.9999Z" stroke="#1741CC" strokeWidth="3" strokeLinecap="round" />
@@ -96,6 +96,8 @@ border-radius: 20px;
  */
 
 export default WaitlistModal;
+
+const statez = ["Abia", "Adamawa", "AkwaIbom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Rivers", "Enugu", "FCT", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Sokoto", "Taraba", "Yobe", "Zamfara"]
 
 const RequestService = ({ phone, closeModal }: any) => {
     const { toast } = useToast();
@@ -136,7 +138,6 @@ const RequestService = ({ phone, closeModal }: any) => {
             console.log(data);
             setLocationInfo(data)
         } catch (error: any) {
-            alert(error?.message)
         }
 
     }
@@ -208,7 +209,7 @@ const RequestService = ({ phone, closeModal }: any) => {
                 <Flex sx={{
                     gap: '5px',
                 }}>
-                    <CustomDropdown label={'State'} options={locationInfo?.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setState(option)} />
+                    <CustomDropdown label={'State'} options={statez} onSelect={(option: any) => setState(option)} />
                     <CustomDropdown label={'Town/Region'} options={locationInfo?.find((item: { name: any }) => item.name == state)?.towns.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setTown(option)} />
                 </Flex>
                 <Box>
@@ -242,7 +243,7 @@ const RequestService = ({ phone, closeModal }: any) => {
                     <Spinner
                         sx={{
                             color: 'background',
-                            height:'20px'
+                            height: '20px'
                         }}
                     />
                 ) : (
