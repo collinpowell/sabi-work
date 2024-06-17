@@ -142,7 +142,7 @@ const RequestService = ({ phone, closeModal }: any) => {
     }
 
     async function submitHandle() {
-        if (name == "" || mobileNumber == "" || service == "" || state == "" || town == "") {
+        if (name == "" || mobileNumber == "" || service == "") {
             alert("Some Fields Are Empty");
             return;
         }
@@ -225,7 +225,7 @@ const RequestService = ({ phone, closeModal }: any) => {
                 </Box>
             </Grid>
             <br />
-            <Button type="button" disabled={loading || !name || !mobileNumber || !service || !state || !town} sx={{
+            <Button type="button" disabled={loading || !name || !mobileNumber || !service} sx={{
                 width: "100%", border: '1px solid #E6E6E6',
                 borderRadius: '100px',
                 //opacity: '0.4',
