@@ -5,7 +5,6 @@ import Modal from "react-modal";
 import { useEffect, useState } from "react";
 import { useToast } from "../useToast";
 import { cn } from "@/lib/utils";
-
 import CustomDropdown from "../CustomSelect";
 
 const customStyles = {
@@ -62,7 +61,6 @@ const WaitlistModal = ({ modalIsOpen, phone, setIsOpen }: any) => {
                         Join the Waiting List
                     </Heading>
                     <Text as='p' sx={{ fontSize: ['13px', null, null, '16px'], maxWidth: '98%' }}>Be among the first to access our app, we&apos;re driven to empower your skills and business, fueling unparalleled growth and success.</Text>
-
                     <svg sx={{
                         position: "absolute",
                         right: "0",
@@ -210,7 +208,7 @@ const RequestService = ({ phone, closeModal }: any) => {
                     gap: '5px',
                 }}>
                     <CustomDropdown label={'State'} options={statez} onSelect={(option: any) => setState(option)} />
-                    <CustomDropdown label={'Town/Region'} options={locationInfo?.find((item: { name: any }) => item.name == state)?.towns.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setTown(option)} />
+                    {/* <CustomDropdown label={'Town/Region'} options={locationInfo?.find((item: { name: any }) => item.name == state)?.towns.map((item: { name: any; }) => item.name)} onSelect={(option: any) => setTown(option)} /> */}
                 </Flex>
                 <Box>
                     <Label mb={1} htmlFor="email">Email (optional)</Label>
