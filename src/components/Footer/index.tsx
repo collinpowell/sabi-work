@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link";
 import { Container, Box, Flex, Divider } from "theme-ui";
 
 const footerContacts = ["hello@findam.co", "+234 704 4284 237"];
@@ -106,9 +107,9 @@ const Footer = () => {
             gap: '10px'
           }}>
             <h2><b>SUPPORT</b></h2>
-            <a href="#">Help</a>
-            <a href="/privacy-policy">Terms of Use</a>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <Link href="#">Help</Link>
+            <Link href="/privacy-policy">Terms of Use</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </Box>
           {/* socials */}
           <div className="flex items-center justify-items-end gap-x-4 md:ml-20 mb-auto">
