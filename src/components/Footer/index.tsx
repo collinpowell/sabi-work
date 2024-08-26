@@ -107,8 +107,8 @@ const Footer = () => {
           }}>
             <h2><b>SUPPORT</b></h2>
             <a href="#">Help</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Privacy Policy</a>
+            <a href="/privacy-policy">Terms of Use</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </Box>
           {/* socials */}
           <div className="flex items-center justify-items-end gap-x-4 md:ml-20 mb-auto">
